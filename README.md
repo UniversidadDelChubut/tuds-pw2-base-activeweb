@@ -13,7 +13,7 @@ Este repositorio ya provee un proyecto vacío, funcionando. Para arrancar de cer
    - `org.javalite.activeweb`
    - `org.slf4j.slf4j-simple`
 
-3) Agregar un descriptor de despliegue (`web.xml`) con la configuración correspondiente para el filtro dispatcher:
+3) Agregar un descriptor de despliegue (`web.xml`) con la configuración correspondiente para el filtro dispatcher.
 
 4) Crear una nueva clase: `AppBootstrap`, dentro del paquete (nuevo): `app.config`, con el contenido respectivo.
 
