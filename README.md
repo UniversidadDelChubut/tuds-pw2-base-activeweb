@@ -17,7 +17,7 @@ Este repositorio ya provee un proyecto vacío, funcionando. Para arrancar de cer
 
 4) Crear una nueva clase: `AppBootstrap`, dentro del paquete (nuevo): `app.config`, con el contenido respectivo.
 
-   - (para más adelante) Crear en el mismo paquete las clases `AppControllerConfig`, `DbConfig` y `FreeMarkerConfig`, con el contenido respectivo.
+   - (para más adelante) Crear en el mismo paquete las clases `AppControllerConfig`, `DbConfig`, `FreeMarkerConfig` y `RouteConfig`, con el contenido respectivo.
 	
 5) Borrar el archivo `index.html/index.jsp` de `Web Pages`. Borrar también, el paquete por defecto que trae el proyecto (no se usará).
 
