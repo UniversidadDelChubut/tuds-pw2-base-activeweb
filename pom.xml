@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb</artifactId>
-            <version>2.3</version>
+            <version>2.3.1-j8</version>
         </dependency>
         <!-- Fix temporal, hasta que salga una versión estable con el cambio de https://github.com/javalite/javalite/issues/918  -->
         <dependency>
