@@ -9,7 +9,7 @@
         <filter-class>org.javalite.activeweb.RequestDispatcher</filter-class>
         <init-param>
             <param-name>exclusions</param-name>
-            <param-value>css,images,js,bower_components</param-value>
+            <param-value>assets,css,images,js,bower_components</param-value>
         </init-param>
         <init-param>
             <param-name>root_controller</param-name>
