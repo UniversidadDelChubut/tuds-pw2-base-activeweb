@@ -1,12 +1,11 @@
 # tuds-pw2-base-activeweb
 Proyecto vacío para framework Activeweb.
 
-El framework Javalite ActiveWeb no tiene un "instalador" o "creador de proyecto automatizado". Como método recomendado, el autor sugiere descargar el proyecto de ejemplo y trabajar desde ahí.
-Nosotros vamos a seguir un enfoque distinto, ya que utilizamos otro entorno y herramientas (tomcat, postgres).
+El framework Javalite ActiveWeb no tiene un "instalador" oficial, pero podemos usar este proyecto para usarlo directamente como base, o mejor aún se puede generar un Maven Archetype a partir de él.
 
-Este repositorio ya provee un proyecto vacío, funcionando. Para arrancar de cero, los pasos a seguir son:
+Para arrancar de cero, los pasos manuales a seguir son:
 
-1) Crear un nuevo proyecto "maven web".
+1) Crear un nuevo proyecto con el archetype "Maven Web".
 
 2) Agregar las dependencias de terceros (última versión estable disponible):
 
