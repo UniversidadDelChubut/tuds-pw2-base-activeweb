@@ -7,9 +7,5 @@ public class HomeController extends AppController {
     public void index() {
 
     }
-    
-    public void resumen() {
-        
-    }
 
 }
