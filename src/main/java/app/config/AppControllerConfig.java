@@ -9,6 +9,6 @@ public class AppControllerConfig extends AbstractControllerConfig {
     @Override
     public void init(AppContext context) {
         //Para la conexión a la base de datos
-        //add(new DBConnectionFilter("default", true));
+        add(new DBConnectionFilter("default", true));
     }
 }
