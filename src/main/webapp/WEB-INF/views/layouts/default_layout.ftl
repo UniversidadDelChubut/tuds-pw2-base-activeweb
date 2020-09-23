@@ -14,5 +14,7 @@
         <div class="contenido">
             ${page_content?no_esc}
         </div>
+        <hr>
+        <p>En esta sesión, se ha clickeado el enlace ${session.recuento!0} veces. <a href="${context_path}/home/cerrar">Cerrar sesión</a></p>
     </body>
 </html>
