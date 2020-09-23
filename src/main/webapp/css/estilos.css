@@ -1,2 +1,6 @@
 .header { background-color: black; color: white; text-align: center; }
 .contenido {border: 1px solid black;}
+
+body, input, a {background-color: #333; color: #999}
+button {background-color: #009999; border-color: #009999; color: #FFF}
+a {color: #009999;} 

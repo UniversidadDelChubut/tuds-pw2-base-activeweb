@@ -15,7 +15,7 @@
             <param-name>root_controller</param-name>
             <param-value>home</param-value>
         </init-param>
-         <init-param>
+        <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
@@ -25,5 +25,49 @@
         <filter-name>dispatcher</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    
+    <!-- URL /admin: solo los que tengan rol de "administrador" -->
+    <security-constraint>
+        <display-name>login</display-name>
+        <web-resource-collection>
+            <web-resource-name>login</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>administrador</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <!-- URL /admin/restringido: solo los que tengan rol de "super administrador" -->
+    <security-constraint>
+        <display-name>super admin</display-name>
+        <web-resource-collection>
+            <web-resource-name>super admin</web-resource-name>
+            <url-pattern>/admin/restringido/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>super_administrador</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <!-- URLs de acceso público (ej. css, js), no requieren login -->
+    <security-constraint>
+        <display-name>publico</display-name>
+        <web-resource-collection>
+            <web-resource-name>publico</web-resource-name>
+            <url-pattern>/css/*</url-pattern>
+            <url-pattern>/js/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+  
+  
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>login</realm-name>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
     
 </web-app>
