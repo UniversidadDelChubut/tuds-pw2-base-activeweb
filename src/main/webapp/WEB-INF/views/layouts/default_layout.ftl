@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="${context_path}/css/estilos.css">
         <title>Proyecto Activeweb</title>
-        </head>
+    </head>
     <body>
         <div class="header">
             <h1>Proyecto Activeweb</h1>
-            </div>
+        </div>
         <div class="contenido">
             ${page_content?no_esc}
-            </div>
-        </body>
-    </html>
+        </div>
+    </body>
+</html>
