@@ -1,48 +1,27 @@
 package app.models;
 
 import java.util.List;
-import java.util.Map;
-import org.javalite.activejdbc.Base;
-import org.javalite.common.Util;
+import org.javalite.activejdbc.Model;
+import org.javalite.activejdbc.annotations.BelongsTo;
+import org.javalite.activejdbc.annotations.HasMany;
+import org.javalite.activejdbc.annotations.Table;
 
-public class Empleado {
+@Table("fichadas.empleado")
+@BelongsTo(foreignKeyName = "sucursal_id", parent = Sucursal.class)
+@HasMany(child = Movimiento.class, foreignKeyName = "empleado_id")
+public class Empleado extends Model {
 
-    public static List getListado() {
-        String sql = ""
-                + " SELECT "
-                + "      e.id, "
-                + "     documento, "
-                + "     nombre || ' ' || apellido as nombre_completo,  "
-                + "     CASE "
-                + "         WHEN mov.tipo_movimiento = 'E' THEN 'Entrada' "
-                + "         WHEN mov.tipo_movimiento = 'S' THEN 'Salida' "
-                + "     END as tipo_movimiento,"
-                + "     um.fecha_hora "
-                + " FROM fichadas.empleado e "
-                + " LEFT JOIN ( "
-                + "     SELECT empleado_id, MAX(fecha_hora) as fecha_hora"
-                + "     FROM fichadas.movimiento "
-                + "     GROUP BY 1"
-                + " ) um "
-                + " ON e.id = um.empleado_id"
-                + " left join fichadas.movimiento mov "
-                + " 	on um.empleado_id = mov.empleado_id "
-                + " 	and um.fecha_hora = mov.fecha_hora ";
-                
-	
-        List res = Base.findAll(sql);
-        
-        return res;
+    public String getNombreCompleto() {
+        return get("nombre") + " " + get("apellido");
     }
 
-    public static Map getById(Integer id) {
-        List<Map> res = Base.findAll(" SELECT * FROM fichadas.empleado where id = ?", id);
-        
-        if(!Util.empty(res)) {
-            return res.get(0);
-        } 
-        
-        return null;
+    public List<Movimiento> getFichadas() {
+        return getAll(Movimiento.class);
     }
     
+    public Sucursal getSucursal() {
+        return parent(Sucursal.class);
+    }
+
 }
+

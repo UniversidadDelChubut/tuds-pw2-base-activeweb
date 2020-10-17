@@ -4,18 +4,18 @@
     <tr>
         <th>ID</th>
         <th>Nombre completo</th>
-        <th>Último movimiento</th>
-        <th></th>
+        <th>Sucursal</th>
     </tr>
     <#list filas as item>
     <tr>
         <td>${item.id}</td>
-        <td>${item.nombre_completo}</td>
-        <td>${item.tipo_movimiento!''} - ${item.fecha_hora!''}</td>
-        <td><a href="${context_path}/empleados/ver/${item.id}">Ver datos</a></td>
+        <td>${item.nombreCompleto}</td>
+        <td>${item.sucursal.nombre}</td>
     </tr>
     </#list>
 </table>
+
+
 
 <style>
     table, th, td { padding: 5px; }
